@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-# Linear Regression - example Agreeableness (independent_var) and Product descriptions (dependent_var)
+# Linear Regression - X (independent_var) and y (dependent_var)
 # @Rumen Ketipov
 
 
@@ -17,8 +17,8 @@ df.describe()
 
 
 # Assigning the input and output values with other words dividing data into attributes and labels
-X = df.iloc[0:, 35].values.reshape(-1,1) # Agreeableness (indep_v)
-y = df.iloc[0:, 1].values.reshape(-1,1)  # Product descriptions (dep_v)
+X = df.iloc[0:, 35].values.reshape(-1,1) # (indep_v)
+y = df.iloc[0:, 1].values.reshape(-1,1)  # (dep_v)
 
 
 # Splitting the data into training and testing sets
@@ -69,8 +69,8 @@ plt.show()
 
 
 # Plotting again for better visualization
-plt.xlabel('Agreeableness', fontsize=10)
-plt.ylabel('Product description', fontsize=10)
+plt.xlabel('Indep. Var.', fontsize=10)
+plt.ylabel('Dep. Var.', fontsize=10)
 X = list(range(len(y)))
 plt.scatter(X_train, y_train, color="blue", label="Actual")
 plt.plot(X_test, y_pred, color="red", label="Predicted")
@@ -100,9 +100,6 @@ def MAPE(y_pred, y_test):
 print ('My MAPE: ' + str(MAPE(y_pred, y_test)) + ' %' )
 
 
-# Plotting of predicted values
-  # plt.xlabel('Agreeableness', fontsize=14)
-  # plt.ylabel('Product description', fontsize=14)
 
 # Plotting of prediction
 plt.plot(y_pred, label='Prediction')
